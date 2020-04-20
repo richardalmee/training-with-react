@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import NewRestaurantForm from '../../src/components/NewRestaurantForm';
 
 describe('NewRestaurantForm', () => {
   describe('clicking the save button', () => {
     it('calls the onSave handler', () => {
       const saveHandler = jest.fn();
-      const wrapper = mount(<NewRestaurantForm onSave={saveHandler} />);
+      const wrapper = shallow(<NewRestaurantForm onSave={saveHandler} />);
 
       wrapper
         .find('[data-test="newRestaurantName"]')

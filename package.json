@@ -12,8 +12,10 @@
   "author": "Richard Clayton",
   "license": "ISC",
   "dependencies": {
+    "materialize-css": "^1.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-materialize": "^3.8.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
