@@ -1,8 +1,14 @@
 import React from 'react';
+import RestaurantListPage from './components/RestaurantListPage';
 
-export default class App extends React.Component {
-  state = { foo: 'bar' };
+class App extends React.Component {
   render() {
-    return <div className='hello'>Hello World !</div>;
+    return (
+      <div>
+        <RestaurantListPage />
+      </div>
+    );
   }
 }
+
+export default App;
