@@ -7,4 +7,7 @@ module.exports = {
     'jest/globals': true,
     'cypress/globals': true,
   },
+  rules: {
+    'comma-dangle': 'off',
+  },
 };

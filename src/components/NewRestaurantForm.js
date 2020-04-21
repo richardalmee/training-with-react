@@ -12,6 +12,7 @@ class NewRestaurantForm extends Component {
     const { inputText } = this.state;
     const { onSave } = this.props;
     onSave(inputText);
+    this.setState({ inputText: '' });
   };
   render() {
     const { inputText } = this.state;
