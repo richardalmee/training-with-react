@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-materialize';
+import { Button, Modal } from 'react-materialize';
 import NewRestaurantForm from './NewRestaurantForm';
 import RestaurantList from './RestaurantList';
 
@@ -15,23 +15,28 @@ class RestaurantListPage extends Component {
     }));
   };
   handleShowNewRestaurantForm = () => {
-    this.setState((state) => ({
+    console.log('handleShowNewRestaurantForm');
+    this.setState({
       showNewRestaurantForm: true,
-    }));
+    });
   };
   render() {
-    const { restaurantNames, showNewRestaurantForm } = this.state;
+    const { restaurantNames } = this.state;
     return (
       <div>
+        <Modal
+          id='addRestaurantModal'
+          header='New Restaurant'
+          open={this.state.showNewRestaurantForm}
+        >
+          <NewRestaurantForm onSave={this.handleAddRestaurant} />
+        </Modal>
         <Button
           data-test='addRestaurantButton'
           onClick={this.handleShowNewRestaurantForm}
         >
           Add Restaurant
         </Button>
-        {showNewRestaurantForm ? (
-          <NewRestaurantForm onSave={this.handleAddRestaurant} />
-        ) : null}
         <RestaurantList restaurantNames={restaurantNames} />
       </div>
     );
